@@ -1,0 +1,74 @@
+<!-- 
+Ejercicio 3 - Crea una web con bootstrap y js, que contenga un botón input donde se pueda cargar una tarea y 
+un botón que al ser presionado agregue dicha tarea a una lista, cada elemento ingresado en la lista debe poder 
+ser eliminado con un botón creado para ese fin. 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="ejercicio practico 3 de JavaScript y DOM" />
+        <meta name="author" content="Carlos Escobar" />
+        <meta name="keywords" content="javascript js html dom" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Practica JavaScript y DOM 3</title>
+    </head>
+    <body class="bg-primary">
+        <header>
+            <div class="container py-3 bg-dark">
+                <h1 class="display-1 text-center text-light">Administrador de Tareas</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="container">
+                <h2 class="pt-4 pb-1 text-warning text-center">Ingrese una tarea</h2>
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label for="nombreTarea" class="text-white"
+                            >Nombre
+                            <p class="badge my-0 text-info">(3-20 caracteres)</p></label
+                        >
+                        <input type="text" class="form-control" minlength="3" maxlength="20" id="nombreTarea" />
+                    </div>
+                    <div class="col-12">
+                        <label for="descripcionTarea" class="text-white"
+                            >Descripción
+                            <p class="badge my-0 text-info">(3-50 caracteres)</p></label
+                        >
+                        <input type="text" class="form-control" minlength="3" maxlength="50" id="descripcionTarea" />
+                    </div>
+                    <div class="pt-3 col-12">
+                        <button type="button" class="btn btn-danger mb-3" onclick="agregarTarea()">Agregar tarea</button>
+                    </div>
+                    <div id="alertElement" class="mt-4"></div>
+                </form>
+            </section>
+            <section id="seccionTabla" class="container visually-hidden">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="datosTabla">
+                        <!-- <tr>
+                <td>Mark</td>...
+              </tr> -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer class="container text-center text-white bg-black py-2 mt-5">&copy; Todos los derechos reservados</footer>
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
